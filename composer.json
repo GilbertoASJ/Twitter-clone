@@ -1,0 +1,19 @@
+{
+    "name": "gilberto/miniframework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Gilberto",
+            "email": "alvesgilberto84@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "MF\\":"vendor/MF/"
+        }
+    }
+}
