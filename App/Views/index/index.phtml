@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+</head>
+<body>
+	
+	<h1>Página index</h1>
+</body>
+</html>
+
+<?php
+
+	echo "Chegamos aqui na função index <br />";
+	foreach($this->view->dadosTeste as $indice => $valor) {
+		echo $valor . "<br />";
+	}
+
+?>
