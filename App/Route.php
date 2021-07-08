@@ -1,29 +1,28 @@
 <?php
-	
-	namespace App;
 
-	// Recuperando a classe abstrata para Route herda-la
-	use MF\Init\Bootstrap;
+namespace App;
 
-	class Route extends Bootstrap {
+use MF\Init\Bootstrap;
 
-		// Iniciando as rotas
-		protected function initRoutes() {
+class Route extends Bootstrap {
 
-			$routes['home'] = array(
-				'route' => '/', 
-				'controller' => 'indexController',
-				'action' => 'index',
-			);
+	protected function initRoutes() {
 
-			$routes['sobreNos'] = array(
-				'route' => '/sobreNos', 
-				'controller' => 'indexController',
-				'action' => 'sobreNos',
-			);
+		$routes['home'] = array(
+			'route' => '/',
+			'controller' => 'indexController',
+			'action' => 'index'
+		);
 
-			$this->setRoutes($routes);
-		}
+		$routes['sobre_nos'] = array(
+			'route' => '/sobreNos',
+			'controller' => 'indexController',
+			'action' => 'sobreNos'
+		);
+
+		$this->setRoutes($routes);
 	}
+
+}
 
 ?>
