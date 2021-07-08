@@ -5,4 +5,3 @@
 	$route = new \App\Route();
 
 ?>
-
