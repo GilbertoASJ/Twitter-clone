@@ -9,15 +9,15 @@
 
 			try {
 
-				$connection = new PDO(
-					"mysql:host=localhost;dbname=mvc;charset=utf-8",
+				$connection = new \PDO(
+					"mysql:host=localhost;dbname=mvc;charset=utf8",
 					"root",
 					""
 				);
 
 				return $connection;
 
-			} catch (PDOException $e) {
+			} catch (\PDOException $e) {
 
 				echo $e;
 			}
