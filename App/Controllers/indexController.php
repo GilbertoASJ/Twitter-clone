@@ -15,11 +15,13 @@ class IndexController extends Action {
 		// $this->view->dados = array('Sofá', 'Cadeira', 'Cama');
 
 		// 	Instância de conexão
-		$connection = Connection::getDb();
+		$connection = Connection::getBd();
 
 		// Instanciar modelo
 		$produto = new Produto($connection);
 		$produtos = $produto->getProdutos();
+
+		$this->view->dados = $produtos;
 
 		$this->render('index', 'layout1');
 	}
