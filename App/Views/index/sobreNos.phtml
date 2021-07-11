@@ -8,12 +8,17 @@
 <body>
 	
 	<h1>Página sobre nós</h1>
+
+	<?php foreach($this->view->dados as $indice => $info) { ?>
+
+		<h3><?= $info['titulo'] ?></h3>
+		<br />
+
+		<?= $info['descricao'] ?>
+		<hr />
+
+	<?php } ?>
+
 </body>
 </html>
 
-<?php
-
-	foreach($this->view->dados as $indice => $valor) {
-		echo $valor.'<br />';
-	}
-?>
