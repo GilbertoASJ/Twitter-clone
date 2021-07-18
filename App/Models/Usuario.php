@@ -24,10 +24,31 @@
 		public function salvar() {
 
 			// Query para inserir dados dentro da tabela
-			$query = "";
+			$query = "insert into usuarios (nome, email, senha) values (:nome, :email, :senha)";
+			$stmt = $this->db->prepare($query);
+
+			$stmt->bindValue(':nome', $this->__get('nome'));
+			$stmt->bindValue(':email', $this->__get('email'));
+			$stmt->bindValue(':senha', $this->__get('senha')); // md5() -> 32 caracteres
+
+			$stmt->execute();
+
+			// Retorno do próprio objeto para salvar as novas credenciais.
+			return $this;
 		}
 
 		// Validar se um cadastro pode ser feito
+		public function validarCadastro() {
+
+			$valido = true;
+
+			if(strlen($this->__get('nome'))) {
+
+				
+			}
+
+			return $valido;
+		}
 
 		// Recuperar um usuário por email
 	}
