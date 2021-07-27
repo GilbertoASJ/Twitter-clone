@@ -1,34 +1,34 @@
 <?php
-	
-	namespace App\Models;
-	use MF\Model\Model;
 
-	class Usuario extends Model {
+namespace App\Models;
+use MF\Model\Model;
 
-		private $id;
-		private $nome;
-		private $email;
-		private $senha;
+class Usuario extends Model {
 
-		public function __get($attr) {
+	private $id;
+	private $nome;
+	private $email;
+	private $senha;
 
-			return $this->$attr;
-		}
+	public function __get($attr) {
 
-		public function __set($attr, $value) {
+		return $this->$attr;
+	}
 
-			$this->$attr = $value;
-		}	
+	public function __set($attr, $value) {
+
+		$this->$attr = $value;
+	}	
 
 		// Salvar
-		public function salvar() {
+	public function salvar() {
 
 			// Query para inserir dados dentro da tabela
-			$query = "insert into usuarios (nome, email, senha) values (:nome, :email, :senha)";
-			$stmt = $this->db->prepare($query);
+		$query = "insert into usuarios (nome, email, senha) values (:nome, :email, :senha)";
+		$stmt = $this->db->prepare($query);
 
-			$stmt->bindValue(':nome', $this->__get('nome'));
-			$stmt->bindValue(':email', $this->__get('email'));
+		$stmt->bindValue(':nome', $this->__get('nome'));
+		$stmt->bindValue(':email', $this->__get('email'));
 			$stmt->bindValue(':senha', $this->__get('senha')); // md5() -> 32 caracteres
 
 			$stmt->execute();
@@ -70,6 +70,29 @@
 			$stmt->execute();
 
 			return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+		}
+
+		// Método para realizar a autenticação do usuário
+		public function autenticar() {
+
+			$query = "select id, nome, email from usuarios where email = :email and senha = :senha";
+			$stmt = $this->db->prepare($query);
+
+			$stmt->bindValue(':email', $this->__get('email'));
+			$stmt->bindValue(':senha', $this->__get('senha'));
+			$stmt->execute();
+
+			$usuario = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+			// Caso o usuário exista, será atribuido nome e id ao mesmo
+			if(!empty($usuario['id']) && !empty($usuario['nome'])) {
+
+				$this->__set('id', $usuario['id']);
+				$this->__set('nome', $usuario['nome']);
+			}
+
+			return $this;
+
 		}
 	}
 ?>
