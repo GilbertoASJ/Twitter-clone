@@ -10,6 +10,9 @@ class IndexController extends Action {
 
 	public function index() {
 
+		// Caso o login não tenha sido efetuado com sucesso:
+		$this->view->login = isset($_GET['login']) ? $_GET['login'] : '';
+
 		$this->render('index');
 	}
 
