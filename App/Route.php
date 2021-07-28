@@ -8,6 +8,8 @@ class Route extends Bootstrap {
 
 	protected function initRoutes() {
 
+		// Rota(s) para IndexController
+
 		$routes['home'] = array(
 			'route' => '/',
 			'controller' => 'indexController',
@@ -26,11 +28,21 @@ class Route extends Bootstrap {
 			'action' => 'registrar'
 		);
 
+		// Rota(s) para o AuthController
+
 		$routes['autenticar'] = array(
 			'route' => '/autenticar',
 			'controller' => 'AuthController',
 			'action' => 'autenticar'
 		);
+
+		$routes['sair'] = array(
+			'route' => '/sair',
+			'controller' => 'AuthController',
+			'action' => 'sair'
+		);
+
+		// Rota(s) para o AppController
 
 		$routes['timeline'] = array(
 			'route' => '/timeline',
@@ -38,10 +50,10 @@ class Route extends Bootstrap {
 			'action' => 'timeline'
 		);
 
-		$routes['sair'] = array(
-			'route' => '/sair',
-			'controller' => 'AuthController',
-			'action' => 'sair'
+		$routes['tweet'] = array(
+			'route' => '/tweet',
+			'controller' => 'AppController',
+			'action' => 'tweet'
 		);
 
 		$this->setRoutes($routes);
