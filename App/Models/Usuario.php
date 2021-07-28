@@ -20,10 +20,10 @@ class Usuario extends Model {
 		$this->$attr = $value;
 	}	
 
-		// Salvar
+	// Salvar
 	public function salvar() {
 
-			// Query para inserir dados dentro da tabela
+		// Query para inserir dados dentro da tabela
 		$query = "insert into usuarios (nome, email, senha) values (:nome, :email, :senha)";
 		$stmt = $this->db->prepare($query);
 
