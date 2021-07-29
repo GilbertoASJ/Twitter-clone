@@ -39,6 +39,8 @@ class AppController extends Action {
 		$this->render('timeline');
 	}
 
+	
+
 	// Método para a manipulação do tweet
 	public function tweet() {
 
