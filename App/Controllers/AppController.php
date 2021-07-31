@@ -68,7 +68,7 @@ class AppController extends Action {
 
 		$pesquisarPor = isset($_GET['pesquisarPor']) ? $_GET['pesquisarPor'] : '';
 
-		echo "<br /><br /><br /> $pesquisarPor";
+		$usuarios = array();
 
 		if($pesquisarPor != '') {
 
@@ -79,11 +79,9 @@ class AppController extends Action {
 			// Recuperando todas as ocorrências da pesquisa
 			$usuarios = $usuario->getAll();
 
-			echo "<pre>";
-				print_r($usuarios);
-			echo "</pre>";
-
 		}
+
+		$this->view->usuarios = $usuarios;
 
 		// Ao acessar a página é feita a renderização da view quemSeguir
 		$this->render('quemSeguir');
