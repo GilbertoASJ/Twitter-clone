@@ -39,7 +39,6 @@ class AppController extends Action {
 	}
 
 	
-
 	// Método para a manipulação do tweet
 	public function tweet() {
 
