@@ -111,20 +111,31 @@
 									<div class="col-md-6 d-flex justify-content-end">
 										<div>
 
-											<!-- Links para seguir ou deixar de seguir um usuário -->
-											<a 
-												href="/acao?acao=seguir&id_usuario=<?=$usuario['id']?>" 
-												class="btn btn-success"
-											>
-												Seguir
-											<a>
+											<!-- Link de seguir só será exibido caso o usuário não siga aquela pessoa -->
+											<?php if($usuario['seguindo_sn'] == 0) { ?>
 
-											<a 
-												href="/acao?acao=deixar_de_seguir&id_usuario=<?=$usuario['id']?>" 
-												class="btn btn-danger"
-											>
-												Deixar de seguir
-											</a>
+												<!-- Links para seguir ou deixar de seguir um usuário -->
+												<a 
+													href="/acao?acao=seguir&id_usuario=<?=$usuario['id']?>" 
+													class="btn btn-success"
+												>
+													Seguir
+												<a>
+
+											<?php } ?>
+
+											<!-- Link de deixar de seguir só será exibido caso ele já esteja sendo seguido -->
+											<?php if($usuario['seguindo_sn'] == 1) { ?>
+
+												<a 
+													href="/acao?acao=deixar_de_seguir&id_usuario=<?=$usuario['id']?>" 
+													class="btn btn-danger"
+												>
+													Deixar de seguir
+												</a>
+
+											<?php } ?>
+
 										</div>
 									</div>
 								</div>
