@@ -21,6 +21,23 @@ class AppController extends Action {
 	    } 
 	}
 
+	public function recuperarInfoUsuario() {
+
+		/* 
+		*
+		* Instância do Model Usuario para atribuição de informações na view
+		* 
+		*/
+
+		$usuario = Container::getModel('Usuario');
+		$usuario->__set('id', $_SESSION['id']);
+
+		$this->view->info_usuario = $usuario->getInfoUsuario();
+		$this->view->total_tweets = $usuario->getTotalTweets();
+		$this->view->total_seguindo = $usuario->getTotalSeguindo();
+		$this->view->total_seguidores = $usuario->getTotalSeguidores();
+	}
+
 	public function timeline() {
 
 		// Verificar se o usuário está autenticado
@@ -33,6 +50,9 @@ class AppController extends Action {
 		$tweets = $tweet->getAll();
 
 		$this->view->tweets = $tweets;         
+
+		// Recuperação das informações do usuário
+		$this->recuperarInfoUsuario();
 
 		// Renderização da página timeline
 		$this->render('timeline');
@@ -83,6 +103,9 @@ class AppController extends Action {
 		}
 
 		$this->view->usuarios = $usuarios;
+
+		// Recuperação das informações do usuário
+		$this->recuperarInfoUsuario();
 
 		// Ao acessar a página é feita a renderização da view quemSeguir
 		$this->render('quemSeguir');
