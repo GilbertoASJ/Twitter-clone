@@ -117,6 +117,23 @@ class AppController extends Action {
 		header('Location: /quemSeguir');
 
 	}
+
+	// Método para deletar um tweet
+	public function removerTweet() {
+
+		// Verificar se o usuário está autenticado
+		$this->validaSessao();
+
+		$id = isset($_GET['id']) ? $_GET['id'] : '';
+		$tweet = Container::getModel('Tweet');
+
+		$tweet->__set('id', $id);
+
+		$tweet->remover();
+
+		header('Location: /timeline');
+
+	}
 }
 
 ?>
