@@ -99,12 +99,19 @@
 
 						<br />
 
-						<!-- Botão de remoção de tweet -->
-						<form>
-							<div class="col d-flex justify-content-end">
-								<button type="submit" class="btn btn-danger"><small>Remover</small></button>
-							</div>
-						</form>
+						<!-- Só será exibido o botão de remover caso o tweet tenha sido feito pelo autor -->
+						<?php if($tweet['id_usuario'] == $_SESSION['id']) { ?>
+
+							<!-- Botão de remoção de tweet -->
+							<form method="post" action="/removerTweet?id=<?= $tweet['id']?>">
+								<div class="col d-flex justify-content-end">
+									<button type="submit" class="btn btn-danger">
+										<small>Remover</small>
+									</button>
+								</div>
+							</form>
+
+						<?php } ?>
 					</div>
 				</div>
 
