@@ -67,6 +67,19 @@ class Tweet extends Model {
 
 	}
 
+	// Método que irá realizar a query de exclusão de um tweet
+	public function remover() {
+
+		$query = "delete from tweets where id = :id";
+		$stmt = $this->db->prepare($query);
+		$stmt->bindValue(':id', $this->__get('id'));
+
+		$stmt->execute();
+
+		return true;
+
+	}
+
 }
 
 ?>
