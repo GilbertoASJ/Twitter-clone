@@ -4,6 +4,8 @@ html {
     body {
         height: 100%;
         font-family: "Segoe UI", Arial, sans-serif;
+        background: #0a0e14;
+        color: whitesmoke;
     } 
 }
 
@@ -93,8 +95,8 @@ h2 {
 }
 
 .perfil {
-    border: 1px solid #e6ecf0;
-    background: #fff;
+    border: 1px solid #0a0e14;
+    background: #020509;
     position: relative;
     margin-bottom: 10px;
     display: block;
@@ -139,21 +141,23 @@ h2 {
 .tweetBox {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    border: 1px solid #e6ecf0;
-    background-color: #E8F5FD;
+    border: 1px solid #0a0e14;
+    background-color: #020509;
     padding:25px;
 }
 
 .quemSeguir {
-    border: 1px solid #e6ecf0;
-    background: #fff;
+    border: 1px solid #0a0e14;
+    background: #020509;
     position: relative;
     margin-bottom: 10px;
     display: block;
     width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
+
+    hr {
+        background-color: lightgrey;
+    }
 }
 
 .quemSeguirTitulo {
@@ -176,5 +180,5 @@ h2 {
 }
 
 .tweet:hover {
-    background-color: #f5f8fa;
+    background-color: #020509;
 }
