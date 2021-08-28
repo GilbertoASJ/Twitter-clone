@@ -84,7 +84,7 @@ Este é um exemplo de como você pode dar instruções sobre como configurar seu
 
 ```
 # Clone este repositório dentro de xampp -> htdocs
-$ git clone ...
+$ git clone https://github.com/GilbertoASJ/Twitter-clone.git
 
 # Ligue o servidor Apache e o banco de dados MySQL no xampp
 
@@ -92,8 +92,6 @@ $ git clone ...
 
 # Navegue até Task-list e veja o projeto rodar
 ```
-
-
 <!-- CONTRIBUTING -->
 ## Contribuindo
 
