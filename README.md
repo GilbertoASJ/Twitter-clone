@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/GilbertoASJ/Twitter-clone/">
     <img 
-      src="https://user-images.githubusercontent.com/56325350/131229782-23422c76-b7f4-4bf3-9b6b-57e0a629c74b.png" 
+      src="https://user-images.githubusercontent.com/56325350/131229945-dd9a28c3-ab7e-44da-b49b-57649b564aea.png" 
       alt="Logo Twitter clone"
       width="100"
       height="100" 
