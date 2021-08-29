@@ -57,7 +57,9 @@
 
 <hr>
 
-Em construção...
+Twitter clone - Clone do Twitter realizado no Curso de desenvolvimento web, o projeto aborda desde o front-end, back-end e um banco de dados, com as funcionalidades básicas do Twitter, tais como: Criar conta, fazer e excluir um tweet, seguir alguém, deixar de seguir e informações do perfil.
+
+Alguns dos assuntos aprendidos e abordados durante a construção do projeto foram: CRUD, abstração com banco de dados, conexão front-back, PDO, Arquitetura MVC, etc.
 
 ### Construido com
 
@@ -102,7 +104,6 @@ As contribuições são o que tornam a comunidade de código aberto um lugar inc
 3. Faça commit de suas alterações (`git commit -m 'Add some AmazingFeature'`)
 4. Envie para o Branch (`git push origin feature / AmazingFeature`)
 5. Abra um pull request
-
 
 <!-- LICENSE -->
 ## Licença
